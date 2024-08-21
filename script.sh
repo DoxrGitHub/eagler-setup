@@ -21,9 +21,4 @@ cd eaglercraftx
 echo '[EAGSCRIPT] grabbing the latest EaglerXBungee build'
 curl -s https://git.eaglercraft.rip/eaglercraft/eaglercraft-builds/src/branch/main/EaglercraftX_1.8_EaglerXBungee.jar -o bungee/plugins/eaglerxbungee.jar 
 
-echo '[EAGSCRIPT] compressing the server/proxy build...'
-cd ..
-zip build.eaglerx.zip eaglercraftx
-
-echo '[EAGSCRIPT] compressing the server/proxy build...'
-echo '[internal] completed'
+echo '[EAGSCRIPT] completed'

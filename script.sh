@@ -16,9 +16,18 @@ cd eaglercraftx
   rm -f bungee/eaglercraft_skins_cache.db
   rm -f bungee/eaglercraft_auths.db
   sed -i '/^stats: /d' bungee/config.yml
-  sed -i "s/^server_uuid: .*\$/server_uuid: $(cat /proc/sys/kernel/random/uuid)/" bungee/plugins/EaglercraftXBungee/settings.yml
 
 echo '[EAGSCRIPT] grabbing the latest EaglerXBungee build'
 curl -s https://git.eaglercraft.rip/eaglercraft/eaglercraft-builds/src/branch/main/EaglercraftX_1.8_EaglerXBungee.jar -o bungee/plugins/eaglerxbungee.jar 
+
+# processing, this is NOT replit.
+echo '[EAGSCRIPT] processing eaglercraft-replit clone so its normal'
+rm -rf main.sh replit.nix selsrv.sh PlaceHTTPer.class LicensePrompt.jar eula.txt buildconf*.json bindmod.so base.repl .replit misc .cache bungee/plugins/EaglercraftXBungee/ .git
+
+echo '[EAGSCRIPT] setting up an eaglercraft client'
+mkdir bungee/web
+curl -s https://git.eaglercraft.rip/eaglercraft/eaglercraft-builds/src/branch/main/EaglercraftX_1.8_Web.zip -o eagweb.zip
+unzip eagweb.zip -d bungee/web/
+rm eagweb.zip
 
 echo '[EAGSCRIPT] completed'
